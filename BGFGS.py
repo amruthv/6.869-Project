@@ -23,18 +23,18 @@ def weightVideo(vidName):
 	background = background/255.0
 
 
-	mu = 0.1
+	mu = 0.01
 
 	for f in xrange( nFrames -1 ):
 	  s,frameImg = vidFile.read()
 	  gray = cv2.cvtColor(frameImg,cv2.COLOR_RGB2GRAY)
 	  gray = gray / 255.0
 	  background = (1-mu) * background + mu * gray
-	  for i in range(shape[0]):
-	  	print i
-	  	for j in range(shape[1]):
-	  		z = background[i,j]
-	  		background[i,j] = sigmoid(z*1.0)
+	  # for i in range(shape[0]):
+	  # 	print i
+	  # 	for j in range(shape[1]):
+	  # 		z = background[i,j]
+	  # 		background[i,j] = sigmoid(z*1.0)
 
 	  # print background
 	  # background=cv2.cvtColor(background,cv2.CV_8U)

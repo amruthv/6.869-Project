@@ -18,8 +18,8 @@ out = convFn(img, fn);
 % INSERT YOUR CODE HERE
 % Threshold the low derivatives to get rid of small changes
 [size1, size2, size3] = size(out);
-mean_horiz = 1.0%1.0*mean2(abs(out(:,:,1))) %fix threshold for the horizontal derivative matrix
-mean_vert = 1.0%1.0*mean2(abs(out(:,:,2)))%fix threshold for the vertical derivative matrix
+mean_horiz = 1.0;%1.0*mean2(abs(out(:,:,1))) %fix threshold for the horizontal derivative matrix
+mean_vert = 1.0;%1.0*mean2(abs(out(:,:,2)))%fix threshold for the vertical derivative matrix
 for i=1:size1 %first matrix
     for j=1:size2
         if abs(out(i,j,1)) < mean_horiz
